@@ -13,13 +13,19 @@ class PostsController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator','Session');
 
 /**
  * index method
  *
  * @return void
  */
+
+	public function test(){
+		$this->layout = 'test';
+	}
+
+
 	public function index() {
 		$this->Post->recursive = 0;
 		$this->set('posts', $this->Paginator->paginate());

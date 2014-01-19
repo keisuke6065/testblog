@@ -13,7 +13,8 @@ class CategoriesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator');
+	public $components = array('Paginator','Session');
+
 
 /**
  * index method
@@ -55,8 +56,8 @@ class CategoriesController extends AppController {
 				$this->Session->setFlash(__('The category could not be saved. Please, try again.'));
 			}
 		}
-		$parentCategories = $this->Category->ParentCategory->find('list');
-		$this->set(compact('parentCategories'));
+		$parents = $this->Category->find('list');
+		$this->set(compact('parents'));
 	}
 
 /**

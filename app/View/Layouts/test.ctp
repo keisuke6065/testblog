@@ -30,33 +30,170 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		
+		echo $this->Html->css('bootstrap.min');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 </head>
-<body>
-	<div id="container">
-		<div id="header">
-			<h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1>
-		</div>
-		<div id="content">
+	<body style="background-color:#CCC">
+  	<div class="container" style="width:1130px">
+    	<!-- ヘッダー -->
+		<div id="header" style="background:#FFF;">
+        	<?php echo $this->Session->flash(); ?>
+        	<div class="page-header" style="margin-bottom:0px;">
+            	
+                <h1 style="margin-left:auto;margin-right:auto;"><?php echo $this->fetch('content'); ?>Example page header0 <small>Subtext for header</small></h1>
+                
+            </div>
+            
+            <div style="padding:20px;">
+            	<?php echo $this->Html->image('icon-1.png',array('url'=>array('controller'=>'posts')));?>
+                <?php echo $this->Html->image('icon-2.png',array('url'=>array('controller'=>'posts')));?>
+                <?php echo $this->Html->image('icon-3.png',array('url'=>array('controller'=>'posts')));?>
+                <?php echo $this->Html->image('icon-4.png',array('url'=>array('controller'=>'posts')));?>
+                <div style="float:right;">
+                    <form class="navbar-form navbar-left" role="search" style="margin-top:0px;">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">検索</button>
+                    </form>
+				</div>
+            </div>
+            
+        	
+        </div>
+        <!-- menu -->
+        
+        
+        <nav class="navbar navbar-inverse" role="navigation">
+			<ul class="nav navbar-nav">
+				<li><a href="#"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+				<li><a href="#">link</a></li>
+				<li><a href="#">link</a></li>
+			</ul>
+        </nav>
 
-			<?php echo $this->Session->flash(); ?>
 
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-			<?php echo $this->Html->link(
-					$this->Html->image('cake.power.gif', array('alt' => $cakeDescription, 'border' => '0')),
-					'http://www.cakephp.org/',
-					array('target' => '_blank', 'escape' => false)
-				);
-			?>
-		</div>
-	</div>
+        <!-- メインコンテンツ --> 
+        
+        <div class="main" style="background-color:#fff">
+			
+            
+            <!-- サイドバー左 -->
+        	<div class="sidebar_left hidden-xs" style="width:180px;float:left;margin:10px;margin-top:0px;border:1px solid #ddd;border-radius:4px;background-color:#FFF;">
+                	<div class="row">
+                    	<div class="col-md-12">
+                        <form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">検索</button>
+						</form>
+                        </div>
+                    </div>
+            
+                	
+            
+            
+            
+            
+            <ul class="nav nav-list">
+              <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+              <li><a href="#"><i class="glyphicon glyphicon-book"></i> Library</a></li>
+              <li><a href="#"><i class="glyphicon glyphicon-user"></i> Applications</a></li>
+              <li><a href="#"><i class="i"></i> Misc</a></li>
+              <li class="dropdown">
+              	<a href="" class="dropdown-toggle" data-toggle="dropdown">dropdown <span class="caret"></span></a>
+              	<ul class="dropdown-menu" role="menu">
+              		<li><a href="">test</a></li>
+                    <li><a href="">test2</a></li>
+              	</ul>
+              </li>
+            </ul>
+            
+            
+            		<!-- ジャンル -->
+                    
+                    
+             	<div>
+                    <ul style="padding-left:20px">
+                    	<li><a href="">php</a>
+                    		<ul style="padding-left:20px">
+                    			<li><a href="">cakephp</a></li>
+                    			<li>wordpress</li>
+                    		</ul>
+                    	</li>
+                    	<li>ブログ
+                    		<ul style="padding-left:20px">
+                    			<li>愚痴</li>
+                    			<li>温泉</li>
+                    		</ul>
+                    	</li>
+                    </ul>
+            	</div>
+            
+            
+            </div>
+            
+            
+            
+			
+            <!-- メインコンテンツ -->
+            <div class="main_content" style="width:700px;float:left;">
+            	<div class="row">
+                	<div class="col-md-12 col-xs-12">
+                    	<div class="thumbnail">
+                        	<?php echo $this->Html->image('300.png');?>
+                            <div class="caption">
+                            	<h3><span class="label label-default">New</span>Thumbnail label</h3>
+                            	<p>...</p>
+                            	<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                         	</div>
+                    	</div>
+                    </div>
+                </div>
+                <ul class="pager">
+                    <li class="previous"><a href="#">&larr; Older</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li class="next"><a href="#">Newer &rarr;</a></li>
+                </ul>
+            </div>
+            
+            
+            
+            
+            
+            
+            <!-- サイドバー右 -->
+            <div class="sidebar_rigth" style="width:180px;float:left;margin:10px;margin-top:0px;border:1px solid #ddd;border-radius:4px;background-color:#FFF;">サイドバー右
+            </div>
+
+
+		<!-- メインコンテンツ終了 -->
+        </div>
+        
+        
+
+        
+        <!-- フッター -->
+        <div id="footer" style="background-color:#3FF;width:1100px;overflow:hidden;">
+        	氏名、メールアドレス、お問い合わせ
+        </div>
+        
+        
+
+        
+    </div>
 	<?php echo $this->element('sql_dump'); ?>
-</body>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+	</body>
 </html>

@@ -8,7 +8,7 @@
 		</dd>
 		<dt><?php echo __('Parent Category'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($category['ParentCategory']['name'], array('controller' => 'categories', 'action' => 'view', $category['ParentCategory']['id'])); ?>
+			<?php echo $this->Html->link($category['Category']['name'], array('controller' => 'categories', 'action' => 'view', $category['Category']['id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Lft'); ?></dt>

@@ -17,6 +17,7 @@ class Category extends AppModel {
 	public $actsAs = array(
 		'Tree',
 	);
+	public $name = 'Category';
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
@@ -26,15 +27,7 @@ class Category extends AppModel {
  *
  * @var array
  */
-	public $belongsTo = array(
-		'ParentCategory' => array(
-			'className' => 'Category',
-			'foreignKey' => 'parent_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
-	);
+
 
 /**
  * hasMany associations
@@ -42,19 +35,6 @@ class Category extends AppModel {
  * @var array
  */
 	public $hasMany = array(
-		'ChildCategory' => array(
-			'className' => 'Category',
-			'foreignKey' => 'parent_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
 		'Post' => array(
 			'className' => 'Post',
 			'foreignKey' => 'category_id',

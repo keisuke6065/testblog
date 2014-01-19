@@ -13,7 +13,7 @@
 	<tr>
 		<td><?php echo h($category['Category']['id']); ?>&nbsp;</td>
 		<td>
-			<?php echo $this->Html->link($category['ParentCategory']['name'], array('controller' => 'categories', 'action' => 'view', $category['ParentCategory']['id'])); ?>
+			<?php echo $this->Html->link($category['Category']['name'], array('controller' => 'categories', 'action' => 'view', $category['Category']['id'])); ?>
 		</td>
 		<td><?php echo h($category['Category']['lft']); ?>&nbsp;</td>
 		<td><?php echo h($category['Category']['rght']); ?>&nbsp;</td>
