@@ -37,6 +37,20 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+    <script>
+
+		CKEDITOR.disableAutoInline = true;
+
+		$( document ).ready( function() {
+			$( '#editor1' ).ckeditor(); // Use CKEDITOR.replace() if element is <textarea>.
+			$( '#editable' ).ckeditor(); // Use CKEDITOR.inline().
+		} );
+
+		function setValue() {
+			$( '#editor1' ).val( $( 'input#val' ).val() );
+		}
+
+	</script>
 </head>
 	<body style="background-color:#CCC">
   	<div class="container" style="width:1130px">
@@ -164,6 +178,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                     <li><a href="#">4</a></li>
                     <li class="next"><a href="#">Newer &rarr;</a></li>
                 </ul>
+                
+                
+		<textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10"></textarea>
+
             </div>
             
             
@@ -192,8 +210,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         
     </div>
 	<?php echo $this->element('sql_dump'); ?>
+    <?php echo $this->Html->script('bootstrap.min')?>
+    <?php echo $this->Html->script('ckeditor/ckeditor.js')?>
+    <?php echo $this->Html->script('ckeditor/adapters/jquery.js')?>
+    <?php echo $this->Html->script('bootstrap.min')?>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     
 	</body>
 </html>
