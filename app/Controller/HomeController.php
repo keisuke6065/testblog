@@ -45,6 +45,11 @@ class HomeController extends AppController {
 		
 	);
 
+	//認証の設定
+	public function beforeFilter(){
+		$this->Auth->allow();
+	}
+
 	//サイドバーの設定
 	public function cate() {
 		return $this->Category->generatetreegrouped();
@@ -56,7 +61,8 @@ class HomeController extends AppController {
         );
 		*/
 	}
-
+	
+	//検索の設定
 	public function search(){
 		$body = null;
 		if(isset($this->request->query['body'])){

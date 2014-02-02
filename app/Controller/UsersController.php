@@ -13,13 +13,32 @@ class UsersController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator','Session');
+	public $components = array('Paginator','Session','Auth');
 
-/**
- * index method
- *
- * @return void
- */
+	public function beforeFilter(){
+		$this->Auth->allow();
+	}
+
+
+	public function login(){
+		
+		$errors = array();
+		if ($this->request->data){
+			if ($this->Auth->login()){
+				return $this->redirect($this->Auth->redirectUrl());
+			} else {
+				$errors[] = 'ユーザー名かパスワードが違います。';
+			}
+		}
+		$this->set('errors', $errors);
+	}
+	
+	public function logout(){
+		$logout_url = $this->Auth->logout();
+		$this->redirect($logout_url);
+	}
+
+
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());

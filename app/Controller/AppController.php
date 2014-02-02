@@ -32,7 +32,7 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components =array('DebugKit.Toolbar'/*,
+	public $components =array('DebugKit.Toolbar','Auth'/*,
 	'Auth' => array(
 			'flash' => array(
 				'element' => 'alert',
@@ -49,6 +49,16 @@ class AppController extends Controller {
         'Form' => array('className' => 'BoostCake.BoostCakeForm'),
         'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
     );
+	
+	public function beforeFilter() {
+        //AuthComponentの設定
+        //$this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
+        //$this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
+        //$this->Auth->loginRedirect = array('controller' => 'tests', 'action' => 'index');
+		
+    }
+	
+	
 }
 
 

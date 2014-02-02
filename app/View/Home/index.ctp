@@ -1,5 +1,3 @@
-<pre><?php echo reset($posts);?></pre>
-<pre><?php print_r($posts);?></pre>
 <div class="row">
 	<div class="col-md-12 col-xs-12">
 	<?php foreach($posts as $post):?>
