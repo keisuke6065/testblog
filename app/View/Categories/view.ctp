@@ -1,4 +1,7 @@
 <div class="categories view">
+<pre><?php echo print_r($list);?></pre>
+<p><?php echo print_r($list);?></p>
+
 <h2><?php echo __('Category'); ?></h2>
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
@@ -8,7 +11,7 @@
 		</dd>
 		<dt><?php echo __('Parent Category'); ?></dt>
 		<dd>
-			<?php echo $this->Html->link($category['Category']['name'], array('controller' => 'categories', 'action' => 'view', $category['Category']['id'])); ?>
+			<?php echo $this->Html->link($category['Category']['parent_id'], array('controller' => 'categories', 'action' => 'view', $category['Category']['parent_id'])); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Lft'); ?></dt>

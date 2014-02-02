@@ -39,6 +39,9 @@ class CategoriesController extends AppController {
 		}
 		$options = array('conditions' => array('Category.' . $this->Category->primaryKey => $id));
 		$this->set('category', $this->Category->find('first', $options));
+		$data = $this->Category->getPath($id);
+        //debug($data); die;
+		$this->set('list',$data);
 	}
 
 /**

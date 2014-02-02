@@ -15,9 +15,10 @@ class Category extends AppModel {
  * @var array
  */
 	public $actsAs = array(
-		'Tree',
+		'Tree','GroupTree'
 	);
 	public $name = 'Category';
+
 
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
